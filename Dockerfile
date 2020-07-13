@@ -9,9 +9,6 @@ WORKDIR /var/www/html
 
 COPY . .
 
-RUN composer install \
-	&& php artisan config:cache
-
 EXPOSE 9000
 
 ENTRYPOINT ["./entrypoint.sh"]
