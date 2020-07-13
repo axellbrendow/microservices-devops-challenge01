@@ -4,6 +4,10 @@ Challenge 01 of the course "[Development of Modern and Scalable Applications wit
 
 Nginx + PHP-FPM + Redis + MySQL with docker-compose
 
+## How to use ?
+
+Download this repository and run: `sudo docker-compose up -d`
+
 ---
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
