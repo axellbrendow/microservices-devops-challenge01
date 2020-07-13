@@ -9,7 +9,8 @@ WORKDIR /var/www/html
 
 COPY . .
 
-RUN php artisan config:cache
+RUN composer install \
+	&& php artisan config:cache
 
 EXPOSE 9000
 
