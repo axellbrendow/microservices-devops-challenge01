@@ -4,6 +4,8 @@ Challenge 01 of the course "[Development of Modern and Scalable Applications wit
 
 Nginx + PHP-FPM + Redis + MySQL with docker-compose
 
+[LinkedIn Post](https://www.linkedin.com/posts/axell-brendow_codeeducation-activity-6689229234675736576-CaE-)
+
 ## How to use ?
 
 Download this repository and run: `sudo docker-compose up -d`
