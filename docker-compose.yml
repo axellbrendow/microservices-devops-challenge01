@@ -1,4 +1,4 @@
-version: '3.1'
+version: "3.1"
 
 services:
   db:
@@ -6,7 +6,6 @@ services:
     command: --innodb-use-native-aio=0
     container_name: ${DB_HOST}
     restart: always
-    tty: true
     ports:
       - "33006:3306"
     environment:
@@ -41,15 +40,16 @@ services:
       - mynetwork
 
   web:
-    image: nginx:alpine
+    build: ./.docker/nginx
     container_name: web
     restart: always
-    tty: true
+    environment:
+      - APP_SERVICE_HOST=app
+      - APP_SERVICE_PORT=9000
     ports:
       - "8000:80"
       - "3000:443"
     volumes:
-      - ./.docker/nginx/conf.d/default.conf/:/etc/nginx/conf.d/default.conf/
       - .:/var/www/html
     depends_on:
       - app
