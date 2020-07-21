@@ -12,6 +12,11 @@ Download this repository and run: `sudo docker-compose up -d`
 
 Then access: http://localhost:8000/
 
+## Other challenges
+
+- [Nginx + PHP-FPM + Redis + MySQL with docker-compose](https://github.com/axell-brendow/microservices-devops-challenge01)
+- [Create Hello World in Go with a Docker image less than 2MB](https://github.com/axell-brendow/microservices-devops-challenge02)
+
 ---
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
