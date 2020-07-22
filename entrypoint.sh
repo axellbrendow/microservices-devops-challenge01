@@ -1,13 +1,14 @@
 #!/usr/bin/env sh
 
-chmod -R 777 storage
-
 composer install
 
-# Try to connect to the database every 1 second over 40 seconds
-dockerize -wait tcp://db:3306 -timeout 40s
+chown -R www-data:www-data storage
 
-php artisan config:cache
+# Try to connect to the database every 1 second over 50 seconds
+dockerize -wait tcp://db:3306 -timeout 50s
+
+php artisan cache:clear
+php artisan config:clear
 php artisan migrate:fresh --seed
 
 php-fpm
