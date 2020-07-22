@@ -28,8 +28,6 @@ services:
     image: redis:alpine3.12
     container_name: challenge01_redis
     restart: unless-stopped
-    ports:
-      - 6379
     networks:
       - challenge01
 
@@ -37,8 +35,6 @@ services:
     build: .
     container_name: challenge01_app
     restart: unless-stopped
-    ports:
-      - 9000
     volumes:
       - .:/var/www/html
     depends_on:
@@ -56,7 +52,6 @@ services:
       - APP_SERVICE_PORT=9000
     ports:
       - "8000:80"
-      - "3000:443"
     volumes:
       - .:/var/www/html
     depends_on:
