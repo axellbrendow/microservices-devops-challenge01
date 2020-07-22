@@ -1,6 +1,6 @@
 # microservices-challenge01
 
-Challenge 01 of the course "[Development of Modern and Scalable Applications with Microservices (pt-br)](https://drive.google.com/file/d/1JXXmYhfi-Sk0zwiEbBIEswDC6AFeyBlD/view?usp=sharing)".
+Challenge 01 of the course "[Architecting and Developing modern and scalable applications based on Microservices (pt-br)](https://drive.google.com/file/d/1JXXmYhfi-Sk0zwiEbBIEswDC6AFeyBlD/view?usp=sharing)".
 
 Nginx + PHP-FPM + Redis + MySQL with docker-compose
 
@@ -8,9 +8,14 @@ Nginx + PHP-FPM + Redis + MySQL with docker-compose
 
 ## How to use ?
 
-Download this repository and run: `sudo docker-compose up -d`
+Download this repository and run: `sudo docker-compose up`
 
 Then access: http://localhost:8000/
+
+## Other challenges
+
+- [Nginx + PHP-FPM + Redis + MySQL with docker-compose](https://github.com/axell-brendow/microservices-devops-challenge01)
+- [Create Hello World in Go with a Docker image less than 2MB](https://github.com/axell-brendow/microservices-devops-challenge02)
 
 ---
 
