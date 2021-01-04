@@ -1,0 +1,60 @@
+version: "3.1"
+
+networks:
+  challenge01:
+    driver: bridge
+
+volumes:
+  challenge01_data:
+    driver: local
+
+services:
+  db:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: challenge01_db
+    restart: unless-stopped
+    ports:
+      - "33006:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+    volumes:
+      - challenge01_data:/var/lib/mysql
+    networks:
+      - challenge01
+
+  redis:
+    image: redis:alpine3.12
+    container_name: challenge01_redis
+    restart: unless-stopped
+    networks:
+      - challenge01
+
+  app:
+    build: .
+    container_name: challenge01_app
+    restart: unless-stopped
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+      - redis
+    networks:
+      - challenge01
+
+  web:
+    build: ./.docker/nginx
+    container_name: challenge01_web
+    restart: unless-stopped
+    environment:
+      - APP_SERVICE_HOST=app
+      - APP_SERVICE_PORT=9000
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - app
+    networks:
+      - challenge01
