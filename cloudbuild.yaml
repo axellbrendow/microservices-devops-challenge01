@@ -22,7 +22,7 @@ steps:
 
 - id: "Running migrations"
   name: 'gcr.io/cloud-builders/docker'
-  args: ['exec', '-t', 'challenge01_app', 'php', 'artisan', 'migrations']
+  args: ['exec', '-t', 'challenge01_app', 'php', 'artisan', 'migrate']
 
 - id: "Running tests"
   name: 'gcr.io/cloud-builders/docker'
