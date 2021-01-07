@@ -12,10 +12,6 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'challenge01_app', 'composer', 'install']
 
-# - id: "Copying .env"
-#   name: 'gcr.io/cloud-builders/docker'
-#   args: ['exec', '-t', 'challenge01_app', 'cp', '.env.example', '.env']
-
 - id: "Running php artisan key:generate"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'challenge01_app', 'php', 'artisan', 'key:generate']
