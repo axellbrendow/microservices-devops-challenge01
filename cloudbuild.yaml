@@ -26,4 +26,4 @@ steps:
 
 - id: "Running tests"
   name: 'gcr.io/cloud-builders/docker'
-  args: ['exec', '-t', 'challenge01_app', 'php', '/var/www/vendor/bin/phpunit', '-c', '/var/www/phpunit.xml']
+  args: ['exec', '-t', 'challenge01_app', 'php', 'vendor/bin/phpunit', '-c', 'phpunit.xml']
