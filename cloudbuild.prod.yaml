@@ -1,0 +1,33 @@
+steps:
+
+- id: "Running docker-compose"
+  name: 'gcr.io/$PROJECT_ID/docker-compose:1.25.5'
+  args: ['-f', 'docker-compose.cloudbuild.yml', 'up', '-d']
+
+- id: "Running docker ps"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['ps']
+
+- id: "Running composer"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'challenge01_app', 'composer', 'install']
+
+- id: "Running php artisan key:generate"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'challenge01_app', 'php', 'artisan', 'key:generate']
+
+- id: "Running migrations"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'challenge01_app', 'php', 'artisan', 'migrate']
+
+- id: "Running tests"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'challenge01_app', 'php', 'vendor/bin/phpunit', '-c', 'phpunit.xml']
+
+- id: "Building image from Dockerfile.prod"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/app-laravel:${SHORT_SHA}', '-f', 'Dockerfile.prod', '.']
+
+- id: "Uploading docker image"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ["push", "gcr.io/$PROJECT_ID/app-laravel"]
