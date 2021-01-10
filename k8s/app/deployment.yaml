@@ -20,6 +20,8 @@ spec: # Deployment spec
           - |
             mkdir /usr/share/nginx; \
             ln -s /var/www/html/public /usr/share/nginx/html; \
+            php artisan config:cache; \
+            php artisan migrate; \
             php-fpm
         name: app
         ports:
