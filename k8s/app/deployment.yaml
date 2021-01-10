@@ -19,7 +19,8 @@ spec: # Deployment spec
           - '-c'
           - |
             mkdir /usr/share/nginx; \
-            ln -s /var/www/html/public /usr/share/nginx/html
+            ln -s /var/www/html/public /usr/share/nginx/html; \
+            php-fpm
         name: app
         ports:
         - containerPort: 80
