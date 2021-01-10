@@ -27,7 +27,7 @@ spec: # Deployment spec
               key: password
         ports:
         - containerPort: 3306
-        volumeMounts: # Attach POD's volumes to the container 
+        volumeMounts: # Attach POD's volumes to the container
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
       volumes: # Define POD volumes
