@@ -18,8 +18,8 @@ spec: # Deployment spec
           - '/bin/sh'
           - '-c'
           - |
-            mkdir /usr/share/nginx \
-            && ln -s /var/www/html/public /usr/share/nginx/html
+            mkdir /usr/share/nginx; \
+            ln -s /var/www/html/public /usr/share/nginx/html
         name: app
         ports:
         - containerPort: 80
