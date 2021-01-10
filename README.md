@@ -5,6 +5,7 @@ Course "[Architecting and Developing modern and scalable applications based on M
 Nginx + PHP-FPM + Redis + MySQL with docker-compose and Kubernetes CI/CD pipeline in a Kubernetes Cluster at Google Cloud Platform.
 
 [LinkedIn Post1](https://www.linkedin.com/posts/axell-brendow_codeeducation-activity-6689229234675736576-CaE-)
+
 [LinkedIn Post2](https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A6754073065061179392/)
 
 ## How to use ?
