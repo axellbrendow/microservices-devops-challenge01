@@ -1,10 +1,11 @@
-# microservices-challenge01
+# DevOps module challenges
 
-Challenge 01 of the course "[Architecting and Developing modern and scalable applications based on Microservices (pt-br)](https://drive.google.com/file/d/1JXXmYhfi-Sk0zwiEbBIEswDC6AFeyBlD/view?usp=sharing)".
+Course "[Architecting and Developing modern and scalable applications based on Microservices (pt-br)](https://drive.google.com/file/d/1JXXmYhfi-Sk0zwiEbBIEswDC6AFeyBlD/view?usp=sharing)".
 
-Nginx + PHP-FPM + Redis + MySQL with docker-compose
+Nginx + PHP-FPM + Redis + MySQL with docker-compose and Kubernetes CI/CD pipeline in a Kubernetes Cluster at Google Cloud Platform.
 
-[LinkedIn Post](https://www.linkedin.com/posts/axell-brendow_codeeducation-activity-6689229234675736576-CaE-)
+[LinkedIn Post1](https://www.linkedin.com/posts/axell-brendow_codeeducation-activity-6689229234675736576-CaE-)
+[LinkedIn Post2](https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A6754073065061179392/)
 
 ## How to use ?
 
