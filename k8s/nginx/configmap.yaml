@@ -6,7 +6,7 @@ data:
   nginx.conf: |
     server {
       listen 80;
-      index index.php index.html;
+      index index.php;
       root /usr/share/nginx/html;
 
       location ~ \.php$ {
