@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec: # Deployment spec
+  replicas: 1
+  selector: # Selector used to create the service
+    matchLabels:
+      app: app
+  template: # POD template
+    metadata:
+      labels:
+        app: app
+    spec: # POD spec
+      containers:
+      - image: img-app-deployment
+        name: app
+        ports:
+        - containerPort: 80
+        env:
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        envFrom:
+        - configMapRef:
+            name: app-conf
+        volumeMounts: # Attach POD's volumes to the container
+        - name: app-conf
+          mountPath: /var/www/.env
+          subPath: .env
+      volumes: # Define POD volumes
+      - name: app-conf
+        configMap:
+          name: app-conf
+          items:
+            - key: env
+              path: .env
