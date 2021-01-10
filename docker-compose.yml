@@ -38,7 +38,7 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-      - db
+      - mysql-service
       - redis
     networks:
       - challenge01
