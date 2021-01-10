@@ -9,7 +9,7 @@ volumes:
     driver: local
 
 services:
-  db:
+  mysql-service:
     image: mysql:5.7
     command: --innodb-use-native-aio=0
     container_name: challenge01_db
@@ -38,7 +38,7 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-      - db
+      - mysql-service
       - redis
     networks:
       - challenge01
